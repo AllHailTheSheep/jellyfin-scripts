@@ -1,0 +1,28 @@
+$ cat list.txt
+file '/full/path/to/file/1'
+file '/full/path/to/file/2'
+
+$ ffmpeg -f concat -safe 0 -i list.txt -c copy out.ogg
+
+make backup script
+
+reset router to current settings and edit routers web port so i can forward port 80 and still access the router
+
+make startup script (see below) and add it to initrc or whatever alpines equivalent is
+
+make caddyfile
+
+automatic file detection and running of mkv script? if i do this i need to account for removal of truehd audio cause ffmpeg hates that shit.
+
+add git commit cmd to backup script and add to cronjob (or make a c driver script and add it to init since cron is fucky on alpine). instead add script to mount copy and umount? dont like the idea of having the backup drive constantly plugged in but its not a bad idea, as most issues will be software not my house burning down. plus i can store an extra copy on offsite cloud storage. longterm todo is to have that be automagic.
+
+add aliases for df -h, du -h, maybe remove-subs script too
+
+note: got rid of ddns from namecheaps side cause it doesnt seem to be changing. script is still set up. if needed to change just make a+ dynamic record host www value 127.0.0.1 and start script and monitor changes
+
+on startup:
+set env variables for ddns.c
+mount sda to hdd0 sdc to hdd1
+startup reverse proxy
+start jellyfin
+
