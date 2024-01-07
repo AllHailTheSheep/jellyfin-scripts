@@ -1,0 +1,133 @@
+smartctl 7.4 2023-08-01 r5530 [x86_64-linux-6.6.5-0-lts] (local build)
+Copyright (C) 2002-23, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Device Model:     HUH728080ALE601
+Serial Number:    VKHKH96X
+LU WWN Device Id: 5 000cca 254d60b3c
+Firmware Version: A4GL0003
+User Capacity:    8,001,563,222,016 bytes [8.00 TB]
+Sector Sizes:     512 bytes logical, 4096 bytes physical
+Rotation Rate:    7200 rpm
+Form Factor:      3.5 inches
+Device is:        Not in smartctl database 7.3/5528
+ATA Version is:   ACS-2, ATA8-ACS T13/1699-D revision 4
+SATA Version is:  SATA 3.1, 6.0 Gb/s (current: 3.0 Gb/s)
+Local Time is:    Sun Jan  7 00:30:14 2024 EST
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART overall-health self-assessment test result: PASSED
+
+General SMART Values:
+Offline data collection status:  (0x82)	Offline data collection activity
+					was completed without error.
+					Auto Offline Data Collection: Enabled.
+Self-test execution status:      (   0)	The previous self-test routine completed
+					without error or no self-test has ever 
+					been run.
+Total time to complete Offline 
+data collection: 		(  101) seconds.
+Offline data collection
+capabilities: 			 (0x5b) SMART execute Offline immediate.
+					Auto Offline data collection on/off support.
+					Suspend Offline collection upon new
+					command.
+					Offline surface scan supported.
+					Self-test supported.
+					No Conveyance Self-test supported.
+					Selective Self-test supported.
+SMART capabilities:            (0x0003)	Saves SMART data before entering
+					power-saving mode.
+					Supports SMART auto save timer.
+Error logging capability:        (0x01)	Error logging supported.
+					General Purpose Logging supported.
+Short self-test routine 
+recommended polling time: 	 (   1) minutes.
+Extended self-test routine
+recommended polling time: 	 (   1) minutes.
+SCT capabilities: 	       (0x003d)	SCT Status supported.
+					SCT Error Recovery Control supported.
+					SCT Feature Control supported.
+					SCT Data Table supported.
+
+SMART Attributes Data Structure revision number: 16
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAG     VALUE WORST THRESH TYPE      UPDATED  WHEN_FAILED RAW_VALUE
+  1 Raw_Read_Error_Rate     0x000b   100   100   016    Pre-fail  Always       -       0
+  2 Throughput_Performance  0x0005   133   133   054    Pre-fail  Offline      -       108
+  3 Spin_Up_Time            0x0007   208   208   024    Pre-fail  Always       -       270 (Average 363)
+  4 Start_Stop_Count        0x0012   100   100   000    Old_age   Always       -       97
+  5 Reallocated_Sector_Ct   0x0033   100   100   005    Pre-fail  Always       -       0
+  7 Seek_Error_Rate         0x000b   100   100   067    Pre-fail  Always       -       0
+  8 Seek_Time_Performance   0x0005   140   140   020    Pre-fail  Offline      -       15
+  9 Power_On_Hours          0x0012   092   092   000    Old_age   Always       -       60599
+ 10 Spin_Retry_Count        0x0013   100   100   060    Pre-fail  Always       -       0
+ 12 Power_Cycle_Count       0x0032   100   100   000    Old_age   Always       -       19
+ 22 Unknown_Attribute       0x0023   100   100   025    Pre-fail  Always       -       100
+ 45 Unknown_Attribute       0x0023   050   050   001    Pre-fail  Always       -       51556319487
+192 Power-Off_Retract_Count 0x0032   100   100   000    Old_age   Always       -       760
+193 Load_Cycle_Count        0x0012   100   100   000    Old_age   Always       -       760
+194 Temperature_Celsius     0x0002   153   153   000    Old_age   Always       -       39 (Min/Max 18/58)
+196 Reallocated_Event_Count 0x0032   100   100   000    Old_age   Always       -       0
+197 Current_Pending_Sector  0x0022   100   100   000    Old_age   Always       -       0
+198 Offline_Uncorrectable   0x0008   100   100   000    Old_age   Offline      -       0
+199 UDMA_CRC_Error_Count    0x000a   200   200   000    Old_age   Always       -       0
+231 Temperature_Celsius     0x0032   100   100   000    Old_age   Always       -       0
+241 Total_LBAs_Written      0x0012   100   100   000    Old_age   Always       -       5509399403488
+242 Total_LBAs_Read         0x0012   100   100   000    Old_age   Always       -       7067553871969
+
+SMART Error Log Version: 1
+ATA Error Count: 1
+	CR = Command Register [HEX]
+	FR = Features Register [HEX]
+	SC = Sector Count Register [HEX]
+	SN = Sector Number Register [HEX]
+	CL = Cylinder Low Register [HEX]
+	CH = Cylinder High Register [HEX]
+	DH = Device/Head Register [HEX]
+	DC = Device Command Register [HEX]
+	ER = Error register [HEX]
+	ST = Status register [HEX]
+Powered_Up_Time is measured from power on, and printed as
+DDd+hh:mm:SS.sss where DD=days, hh=hours, mm=minutes,
+SS=sec, and sss=millisec. It "wraps" after 49.710 days.
+
+Error 1 occurred at disk power-on lifetime: 56641 hours (2360 days + 1 hours)
+  When the command that caused the error occurred, the device was doing SMART Offline or Self-test.
+
+  After command completion occurred, registers were:
+  ER ST SC SN CL CH DH
+  -- -- -- -- -- -- --
+  40 51 08 c0 02 7a 40  Error: UNC 8 sectors at LBA = 0x007a02c0 = 7996096
+
+  Commands leading to the command that caused the error were:
+  CR FR SC SN CL CH DH DC   Powered_Up_Time  Command/Feature_Name
+  -- -- -- -- -- -- -- --  ----------------  --------------------
+  25 00 08 c0 02 7a 40 00   6d+10:37:07.764  READ DMA EXT
+  25 00 00 d8 e9 77 40 00   6d+10:37:04.826  READ DMA EXT
+  25 00 b0 c8 73 08 40 00   6d+10:37:04.787  READ DMA EXT
+  25 00 08 70 09 2b 40 00   6d+10:37:04.738  READ DMA EXT
+  35 00 18 a8 0b ef 40 00   6d+10:37:04.737  WRITE DMA EXT
+
+SMART Self-test log structure revision number 1
+Num  Test_Description    Status                  Remaining  LifeTime(hours)  LBA_of_first_error
+# 1  Short captive       Completed without error       00%     60598         -
+# 2  Short captive       Completed without error       00%     60596         -
+# 3  Vendor (0x70)       Completed without error       00%     59091         -
+# 4  Vendor (0x71)       Completed without error       00%     59091         -
+
+SMART Selective self-test log data structure revision number 1
+ SPAN  MIN_LBA  MAX_LBA  CURRENT_TEST_STATUS
+    1        0        0  Not_testing
+    2        0        0  Not_testing
+    3        0        0  Not_testing
+    4        0        0  Not_testing
+    5        0        0  Not_testing
+Selective self-test flags (0x0):
+  After scanning selected spans, do NOT read-scan remainder of disk.
+If Selective self-test is pending on power-up, resume after 0 minute delay.
+
+The above only provides legacy SMART information - try 'smartctl -x' for more
+
