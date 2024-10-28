@@ -1,5 +1,5 @@
 #!/bin/sh
-mount /dev/sde /home/julia/hdd3
+mount /dev/sdf /home/julia/hdd3
 
 echo "Copying scripts..."
 rsync -vvhru --progress --delete /home/julia/scripts/ /home/julia/hdd3/backup/scripts
@@ -13,4 +13,6 @@ rsync -vvhru --progress --delete /home/julia/hdd1/ /home/julia/hdd3/backup/hdd1
 echo "Copying hdd2..."
 rsync -vvhru --progress --delete /home/julia/hdd2/ /home/julia/hdd3/backup/hdd2
 
-umount /dev/sde
+sleep 10
+
+umount /dev/sdf

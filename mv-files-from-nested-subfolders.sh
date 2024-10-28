@@ -19,7 +19,11 @@ basedir="$1"
 ext="$2"
 pwd=$( pwd )
 #TODO: check if this temp file exists before removing a potentially nonexistant file. also check before creating it. maybe title it off a random hash? also please make it a variable im getting tire of typing it out every time
-rm "$pwd/filefortempliststoragewithlongnameastonotoverwriteanything.txt"
+tempfile="$pwd/filefortempliststoragewithlongnameastonotoverwriteanything.txt"
+if [ -f $tempfile ]; then
+    rm "$pwd/filefortempliststoragewithlongnameastonotoverwriteanything.txt"
+fi
+
 for file in "$pwd"/*; do
     if [ -f "$file" ]; then
 	bf=$( basename "$file" )
@@ -40,3 +44,4 @@ for dir in "$basedir"/*; do
     done
 done
 rm "$pwd/filefortempliststoragewithlongnameastonotoverwriteanything.txt"
+rm -rf "$basedir"

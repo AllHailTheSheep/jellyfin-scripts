@@ -9,7 +9,7 @@ for f in "$dir"/*; do
 		#echo "$f"
 		#echo "$bf"
 		#echo "$fmp4"
-		ffmpeg -i ./"$bf" -sn -dn -c copy -strict -2 ./"$fmp4"
+		ffmpeg -i ./"$bf" -sn -dn -c copy -map 0:0 -map 0:2 -strict -2 ./"$fmp4"
 		rm "$f"
 	fi
 done
